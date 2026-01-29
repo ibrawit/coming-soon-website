@@ -74,10 +74,7 @@ body {
     font-size: 0.98rem;
 }
 
-/* ============================
-   🔥 العداد الاحترافي
-   ============================ */
-
+/* العداد */
 .timer {
     display: flex;
     gap: 0.9rem;
@@ -91,7 +88,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    flex: 0 0 80px;
     height: 80px;
     border-radius: 0.9rem;
     background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.95));
@@ -111,14 +108,17 @@ body {
     color: #cbd5e1;
 }
 
+/* تابعنا */
 .note {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     color: #94a3b8;
     font-size: 0.95rem;
     margin-top: 1rem;
+    text-align: center;
+    white-space: nowrap;
 }
 
 footer {

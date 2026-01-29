@@ -21,7 +21,6 @@
                 نعمل على إطلاق تجربة رقمية حديثة تلائم طموحك.
             </p>
 
-            <!-- العداد الاحترافي -->
             <div class="timer">
                 <div class="time-box">
                     <span id="days" class="number">0</span>
@@ -42,8 +41,7 @@
             </div>
 
             <div class="note">
-                <span>📩</span>
-                <p>تابعنا، وسنعلن عن الإطلاق قريبًا.</p>
+                📩 تابعنا، وسنعلن عن الإطلاق قريبًا.
             </div>
         </div>
 
@@ -54,14 +52,10 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
-
-        // التاريخ المستهدف للإطلاق
         var launchDate = new Date("Mar 15, 2026 00:00:00").getTime();
-
         var timer = setInterval(function () {
             var now = new Date().getTime();
             var distance = launchDate - now;
-
             if (distance <= 0) {
                 clearInterval(timer);
                 ["days","hours","minutes","seconds"].forEach(id => {
@@ -69,12 +63,10 @@
                 });
                 return;
             }
-
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             document.getElementById("days").innerText = days;
             document.getElementById("hours").innerText = hours;
             document.getElementById("minutes").innerText = minutes;
