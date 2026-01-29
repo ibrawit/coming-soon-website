@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الموقع قيد التطوير</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="logo">
+            <span class="dot"></span>
+            <span class="brand">مشروعنا الرقمي</span>
+        </div>
+
+        <div class="content">
+            <h1>نجهّز لك تجربة مختلفة</h1>
+            <p>
+                هذا الموقع حالياً تحت التطوير والصيانة.<br />
+                نعمل على إطلاق تجربة رقمية حديثة تلائم طموحك.
+            </p>
+
+            <div class="timer">
+                <div class="time-box">
+                    <span class="number">30</span>
+                    <span class="label">أيام</span>
+                </div>
+                <div class="time-box">
+                    <span class="number">12</span>
+                    <span class="label">ساعات</span>
+                </div>
+                <div class="time-box">
+                    <span class="number">45</span>
+                    <span class="label">دقائق</span>
+                </div>
+            </div>
+
+            <div class="note">
+                <span>📩</span>
+                <p>تابعنا، وسنعلن عن الإطلاق قريبًا.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© <span id="year"></span> جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
