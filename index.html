@@ -21,18 +21,23 @@
                 نعمل على إطلاق تجربة رقمية حديثة تلائم طموحك.
             </p>
 
+            <!-- العداد الاحترافي -->
             <div class="timer">
                 <div class="time-box">
-                    <span class="number">30</span>
+                    <span id="days" class="number">0</span>
                     <span class="label">أيام</span>
                 </div>
                 <div class="time-box">
-                    <span class="number">12</span>
+                    <span id="hours" class="number">0</span>
                     <span class="label">ساعات</span>
                 </div>
                 <div class="time-box">
-                    <span class="number">45</span>
+                    <span id="minutes" class="number">0</span>
                     <span class="label">دقائق</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds" class="number">0</span>
+                    <span class="label">ثواني</span>
                 </div>
             </div>
 
@@ -49,6 +54,32 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        // التاريخ المستهدف للإطلاق
+        var launchDate = new Date("Mar 15, 2026 00:00:00").getTime();
+
+        var timer = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = launchDate - now;
+
+            if (distance <= 0) {
+                clearInterval(timer);
+                ["days","hours","minutes","seconds"].forEach(id => {
+                    document.getElementById(id).innerText = "0";
+                });
+                return;
+            }
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }, 1000);
     </script>
 </body>
 </html>
